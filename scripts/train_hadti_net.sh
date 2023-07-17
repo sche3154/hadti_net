@@ -1,0 +1,22 @@
+set -ex
+python3 /home/sheng/Diffusion/hadti_net/train_angular_sr.py \
+--dataroot /home/sheng/Diffusion/data \
+--name hadti_net \
+--model hadti \
+--net U3D \
+--lr 0.0001 \
+--input_nc 8  \
+--output_nc 6  \
+--dataset_mode angular_sr \
+--data_norm z_scoreV2 \
+--num_threads 2 \
+--batch_size 1 \
+--input_batch_sizes 8 \
+--patch_shape 64 \
+--patch_overlap 32 \
+--bounding \
+--n_epochs 5 \
+--n_epochs_decay 0 \
+--display_freq 10 \
+--save_epoch_freq 5 \
+--gpu_ids 1
