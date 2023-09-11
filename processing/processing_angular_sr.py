@@ -75,7 +75,7 @@ class ProcessingAngularSR(Abstract_Subfunction):
         brain_mask = sample.brain_mask.squeeze()
 
         print('Normalize DWI+T1 (z_score) the {:}'.format(sample.index))
-        normalized_dwi = self.z_score_normlization(dwi, brain_mask)
+        normalized_dwi, _ ,_ = self.z_score_normlizationV2(dwi, brain_mask)
         normalized_t1  = self.z_score_normlization(t1, brain_mask)
         # Update the sample with the normalized image
         sample.dwi = normalized_dwi
